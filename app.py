@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 
 
 app = Flask(__name__)
@@ -6,11 +6,16 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return "<h1>Hello Flask framework</h1>"
+    return render_template("index.html")
 
-@app.route('/user/<name>') #Here dinymic route
-def menber(name):
-    return "<h1>สวัสดีสมาชิก: {}</h1>".format(name[1000])
+
+@app.route('/about')
+def about():
+    return render_template("about.html")
+
+@app.route('/admin')
+def member():
+    return render_template("admin.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
