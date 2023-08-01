@@ -11,7 +11,8 @@ def index():
 
 @app.route('/about')
 def about():
-    return render_template("about.html")
+    products = ["เสื้อผ้า", "เตารีด", "ผ้าห่ม"]
+    return render_template("about.html", myProducts = products)
 
 @app.route('/admin')
 def profile():
