@@ -15,7 +15,9 @@ def about():
 
 @app.route('/admin')
 def member():
-    return render_template("admin.html")
+    name = "Laksanai" #send value to template
+    age = 27
+    return render_template("admin.html", myname = name, myAge= age)
 
 if __name__ == "__main__":
     app.run(debug=True)
